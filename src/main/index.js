@@ -1,18 +1,23 @@
-var path = require('path');
+'use strict';
 
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+import path from 'path';
+
+import app from 'app';
+import BrowserWindow from 'browser-window'
+
 // Report crashes to our server.
-require('crash-reporter').start();
+import crashReporter from 'crash-reporter';
+crashReporter.start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
-var mainWindow = null;
+let mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
-  if (process.platform != 'darwin')
+  if (process.platform !== 'darwin') {
     app.quit();
+  }
 });
 
 // This method will be called when Electron has done everything
@@ -22,7 +27,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
-  var index = 'file://' + path.resolve(__dirname, '../index.html');
+  let index = 'file://' + path.resolve(__dirname, '../index.html');
   mainWindow.loadUrl(index);
 
   // Open the devtools.
