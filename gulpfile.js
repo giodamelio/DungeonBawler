@@ -10,8 +10,14 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('out/'));
 });
 
-gulp.task('watch', ['compile'], function() {
+gulp.task('copy-html', function() {
+  gulp.src('src/**/*.html')
+    .pipe(gulp.dest('out/'));
+});
+
+gulp.task('watch', ['compile', 'copy-html'], function() {
   gulp.watch('src/**/*.js', ['compile']);
+  gulp.watch('src/**/*.html', ['copy-html']);
 });
 
 gulp.task('default', ['watch']);
