@@ -1,17 +1,16 @@
 'use strict';
 
-import path from 'path';
-
 import app from 'app';
 import BrowserWindow from 'browser-window'
+import crashReporter from 'crash-reporter';
+
+import MainWindow from './mainWindow';
 
 // Report crashes to our server.
-import crashReporter from 'crash-reporter';
 crashReporter.start();
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the javascript object is GCed.
-let mainWindow = null;
+// Keep track of the windows
+let windows = {};
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -20,25 +19,15 @@ app.on('window-all-closed', function() {
   }
 });
 
-// This method will be called when Electron has done everything
-// initialization and ready for creating browser windows.
+// Start the app
 app.on('ready', function() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  // Create the main window
+  var mainWindow = new MainWindow();
+  windows.main = mainWindow;
 
-  // and load the index.html of the app.
-  let index = 'file://' + path.resolve(__dirname, '../index.html');
-  mainWindow.loadUrl(index);
-
-  // Open the devtools.
-  mainWindow.openDevTools();
-
-  // Emitted when the window is closed.
+  // Remove the mainwindow from the window list when it is closed
   mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
+    delete windows.main;
   });
 });
 
