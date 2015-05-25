@@ -39,6 +39,17 @@ class MainWindow extends EventEmitter {
             }
           }
         ]
+      },
+      {
+        label: 'Tools',
+        submenu: [
+          {
+            label: 'Open Dev Tools',
+            click: () => {
+              this.window.openDevTools();
+            }
+          }
+        ]
       }
     ]);
     Menu.setApplicationMenu(this.menu);
