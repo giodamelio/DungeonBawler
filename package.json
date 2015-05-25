@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/giodamelio/DungeonBawler#readme",
   "devDependencies": {
+    "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
     "gulp-notify": "^2.2.0",
