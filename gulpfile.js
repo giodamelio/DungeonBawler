@@ -17,9 +17,15 @@ gulp.task('copy-html', function() {
     .pipe(gulp.dest('out/'));
 });
 
-gulp.task('watch', ['compile', 'copy-html'], function() {
+gulp.task('copy-vendor', function() {
+  gulp.src('src/browser/vendor/**/*.*')
+    .pipe(gulp.dest('out/browser/vendor/'));
+});
+
+gulp.task('watch', ['compile', 'copy-html', 'copy-vendor'], function() {
   gulp.watch('src/**/*.js', ['compile']);
   gulp.watch('src/**/*.html', ['copy-html']);
+  gulp.watch('src/browser/vendor/**/*.*', ['copy-vendor']);
 });
 
 gulp.task('default', ['watch']);
