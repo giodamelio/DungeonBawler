@@ -6,7 +6,9 @@ var notify = require('gulp-notify');
 gulp.task('compile', function() {
   gulp.src('src/**/*.js')
     .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
-    .pipe(babel())
+    .pipe(babel({
+      optional: ['runtime']
+    }))
     .pipe(gulp.dest('out/'));
 });
 
