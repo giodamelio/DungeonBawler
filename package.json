@@ -2,7 +2,7 @@
   "name": "dungeonbawler",
   "version": "0.1.0",
   "description": "A code based dungeon crawler",
-  "main": "out/main/index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/giodamelio/DungeonBawler.git"
@@ -14,14 +14,7 @@
   },
   "homepage": "https://github.com/giodamelio/DungeonBawler#readme",
   "devDependencies": {
-    "babel-runtime": "^5.4.7",
-    "esprima-fb": "^15001.1.0-dev-harmony-fb",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^5.1.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1"
+    "esprima-fb": "^15001.1.0-dev-harmony-fb"
   },
-  "dependencies": {
-    "react": "^0.13.3"
-  }
+  "dependencies": {}
 }
