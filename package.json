@@ -25,5 +25,7 @@
     "webpack": "^1.9.10",
     "webpack-dev-server": "^1.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^0.13.3"
+  }
 }
