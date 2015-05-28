@@ -1,14 +1,16 @@
 import React from 'react';
 
-class App extends React.Component {
-  render() {
-    return <h1>Hello React!</h1>;
-  }
-}
+import App from './app';
 
 document.addEventListener('DOMContentLoaded', function() {
+  let items = [
+    'one',
+    'two',
+    'three',
+    'pancakes'
+  ];
   React.render(
-    <App></App>,
+    <App items={items}></App>,
     document.getElementById('container')
   );
 });

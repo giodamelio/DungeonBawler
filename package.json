@@ -5,7 +5,7 @@
   "author": "Gio d'Amelio",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --port 3141 --content-base out/"
+    "dev": "webpack-dev-server --port 3141 --content-base out/ --hot"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "html-webpack-plugin": "^1.4.0",
     "node-libs-browser": "^0.5.2",
+    "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.10",
     "webpack-dev-server": "^1.9.0"
   },
